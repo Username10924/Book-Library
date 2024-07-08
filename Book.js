@@ -12,7 +12,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     this.info = function() {
-        if(read)
+        if(this.read == "true")
             return title + ", " + author + ", " + pages + " pages" + ", book has been read.";
         return title + ", " + author + ", " + pages + " pages" + ", book not read yet.";
     };
@@ -131,6 +131,7 @@ document.body.addEventListener("click", (e) => {
         readText.textContent = "Book has been read";
         readText.classList.add("read-text");
         details.appendChild(readText);
+        bookLib[buttons.parentElement.dataset.id].read = "true";
     }
 
     if(e.target.classList == "unmark") {
@@ -148,6 +149,7 @@ document.body.addEventListener("click", (e) => {
         readText.textContent = "Book not read yet";
         readText.classList.add("not-read-text");
         details.appendChild(readText);
+        bookLib[buttons.parentElement.dataset.id].read = "false";
     }
 });
 
