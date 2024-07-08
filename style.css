@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: rgb(34, 34, 34);
+}
+input {
+    background-color: rgb(53, 53, 53);
+    border: 0px solid;
+    color: #CCC;
+    border-radius: 8px;
+    padding: 10px;
+}
+button:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+textarea:focus, input:focus{
+    outline: rgb(110, 110, 255) solid 2px;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 32px 32px 10px 32px;
+    color: #CCC;
+    font-size: 2rem;
+    justify-content: space-between;
+}
+header button{
+    background-color: green;
+    width: 150px;
+    height: 42px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+[data-modal] {
+    color: white;
+    background-color: rgb(34, 34, 34);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 32px;
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 10px;
+    height: 50vh;
+    width: 50vw;
+}
+[data-modal] form {
+    display: grid;
+    grid-template-columns: auto 6fr;
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    height: 100%;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.modal-buttons {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    grid-row: 5 / -1;
+    grid-column: 1 / -1;
+}
+#close-modal, #add-confirm {
+    background-color: green;
+    width: 150px;
+    height: 42px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+#close-modal {
+    background-color: rgb(255, 48, 48);
+}
+.container {
+    padding: 32px;
+    margin-top: 12px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 75px;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.book {
+    height: 350px;
+    width: 250px;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    border-radius: 10px;
+}
+
+.details {
+    background-color: rgba(0, 0, 0, 0.329);
+    text-align: center;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px;
+}
+
+.buttons {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+}
+.remove {
+    background-color: rgb(255, 48, 48);
+    width: 100px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.mark {
+    background-color: green;
+    width: 100px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.unmark {
+    background-color: green;
+    width: 100px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}

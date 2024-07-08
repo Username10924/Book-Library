@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book lib</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Book.js" defer></script>
+</head>
+<body>
+    <header>
+        <p>Book Library v0.1</p>
+        <button id="add">Add Book</button>
+    </header>
+    <hr>
+    <dialog data-modal>
+            <form id="form">
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="title" style="height: fit-content" required>
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author" style="height: fit-content" required>
+                <label for="pages">Pages: </label>
+                <input type="number" id="pages" name="pages" style="height: fit-content" required>
+                <p>Did you read it? </p>
+                <div class="radio-form">
+                    <input type="radio" id="readTrue" name="read" style="height: fit-content" value="true" required>
+                    <label for="readTrue">Yes</label>
+                    <input type="radio" id="readFalse" name="read" style="height: fit-content" value="false" required>
+                    <label for="readFalse">No</label>
+                </div>
+                <div class="modal-buttons">
+                    <button id="add-confirm">Add</button>
+                    <button type="reset" id="close-modal">Cancel</button>
+                </div>
+            </form>
+    </dialog>
+
+    <div class="container"></div>
+</body>
+</html>
