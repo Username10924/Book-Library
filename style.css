@@ -148,3 +148,10 @@ header button{
     color: white;
     font-size: 1rem;
 }
+
+.read-text {
+    color: green;
+}
+.not-read-text {
+    color: red;
+}

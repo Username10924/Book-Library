@@ -1,5 +1,11 @@
 let bookLib = [];
 
+const addButton = document.querySelector("#add");
+const container = document.querySelector(".container");
+const modal = document.querySelector("[data-modal]");
+const cancelButton = document.querySelector("#close-modal");
+const form = document.querySelector("#form");
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -14,42 +20,6 @@ function Book(title, author, pages, read) {
 
 function addBook(title, author, pages, read) {
     bookLib.push(new Book(title, author, pages, read));
-}
-
-function displayBooks() {
-    for(let i = 0; i < bookLib.length; i++) {
-        console.log(bookLib[i].info());
-    }
-}
-
-// DOM
-
-const addButton = document.querySelector("#add");
-const container = document.querySelector(".container");
-const modal = document.querySelector("[data-modal]");
-const cancelButton = document.querySelector("#close-modal");
-const form = document.querySelector("#form");
-
-addButton.addEventListener("click", () => {
-    modal.showModal();
-});
-
-cancelButton.addEventListener("click", () => {
-    modal.close();
-});
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let title = document.querySelector("#title").value;
-    let author = document.querySelector("#author").value;
-    let pages = document.querySelector("#pages").value;
-    let read;
-    if(document.querySelector("#readTrue").checked)
-        read = document.querySelector("#readTrue").value;
-    else
-        read = document.querySelector("#readFalse").value;
-    bookLib.push(new Book(title, author, pages, read));
-    modal.close();
 
     let cover = document.createElement("div");
     cover.classList.add("cover");
@@ -102,6 +72,39 @@ form.addEventListener("submit", (e) => {
     cover.appendChild(buttons);
     
     container.appendChild(cover);
+}
+
+addBook("Song of ice and fire", "George R. R. Martin", 694, "true");
+addBook("To Kill a Mockingbird", "Harper Lee ", 336, "false");
+addBook("The Great Gatsby", "F. Scott Fitzgerald",180 , "true");
+addBook("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 320, "true");
+
+function displayBooks() {
+    for(let i = 0; i < bookLib.length; i++) {
+        console.log(bookLib[i].info());
+    }
+}
+
+addButton.addEventListener("click", () => {
+    modal.showModal();
+});
+
+cancelButton.addEventListener("click", () => {
+    modal.close();
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
+    let read;
+    if(document.querySelector("#readTrue").checked)
+        read = document.querySelector("#readTrue").value;
+    else
+        read = document.querySelector("#readFalse").value;
+    modal.close();
+    addBook(title, author, pages, read);
     e.target.reset();
 });
 
